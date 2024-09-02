@@ -1,0 +1,59 @@
+@import url('https://fonts.googleapis.com/css2?family=Cairo&display=swap');
+
+body{
+	font-family: 'Cairo', sans-serif;
+	direction: rtl;
+	text-align: right;
+}
+
+.logo-img {
+	background: url(../img/logo-rtl.png);
+	background-repeat: no-repeat;
+    background-size: contain;
+}
+
+.how-app-work-section .how-app-work-slider-wrapper {
+	direction: ltr;
+}
+
+.download-btn.active {
+    margin-right: 0;
+    margin-left: 15px;
+}
+
+.scrollup {
+	right: auto;
+	left: 20px;
+}
+
+.ml-auto, .mx-auto {
+    margin-right: auto!important;
+    margin-left: 0 !important;
+}
+
+.banner-static .banner-content {
+	padding-left: 10px;
+}
+
+.footer-copyright {
+	direction: ltr;
+}
+
+.modal-body .close {
+	position: absolute;
+	top: 10px;
+	left: 10px;
+	right: auto;
+}
+
+.text-left {
+	text-align: right !important;
+	direction: rtl;
+}
+
+@media (max-width: 1366px){
+	.banner-static {
+		background: #fff url(../img/slider-bg-rtl.jpg) center top no-repeat;
+		background-size: cover;
+	}
+}
