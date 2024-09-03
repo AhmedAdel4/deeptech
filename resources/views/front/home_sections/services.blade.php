@@ -27,7 +27,7 @@
                     <div class="service-item d-flex position-relative h-100">
                         <i class="{{ $icons[$index] }} icon flex-shrink-0"></i>
                         <div style="margin-right: 35px">
-                            <h4 class="title"><a href="{{ $service['link'] }}"
+                            <h4 class="title"><a href="{{ route('serviceDetails', ['service' => $service]) }}"
                                     class="stretched-link">{{ $service['title'] }}</a></h4>
                             <p class="description">{!! $service['description'] !!}</p>
                         </div>

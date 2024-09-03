@@ -58,4 +58,12 @@ class HomeController extends Controller
         $services = Service::all();
         return view('front.about_detail', compact('about', 'socialLinks', 'contact','services'));
     }
+
+    public function serviceDetails(Service $service)
+    {
+        $socialLinks = SocialLink::pluck('url', 'platform')->toArray();
+        $contact = ContactUs::first();
+        $services = Service::all();
+        return view('front.service_detail', compact('service', 'socialLinks', 'contact','services'));
+    }
 }

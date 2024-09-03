@@ -24,7 +24,7 @@
             </div>
 
             <div class="col-lg-4 col-md-3 footer-links">
-                <h4 style="font-size: 30px">@lang('lang.Useful Links')</h4>
+                <h4 style="font-size: 20px">@lang('lang.Useful Links')</h4>
                 <ul>
                     <li><a href="#hero">@lang('lang.home')</a></li>
                     <li><a href="#about">@lang('lang.AboutUs')</a></li>
@@ -34,7 +34,7 @@
             </div>
 
             <div class="col-lg-4 col-md-3 footer-links">
-                <h4 style="font-size: 30px">@lang('lang.Our Services')</h4>
+                <h4 style="font-size: 20px">@lang('lang.Our Services')</h4>
                 <ul>
                     @foreach ($services as $service)
                         <li><a href="#">{{ $service->title }}</a></li>

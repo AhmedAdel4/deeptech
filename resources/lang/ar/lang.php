@@ -324,4 +324,5 @@ return [
     'projects' => 'المشاريع',
     'clients' => 'العملاء',
     'statistics' => 'الأحصائيات',
+    'Service Details' => 'تفاصيل الخدمة',
 ];

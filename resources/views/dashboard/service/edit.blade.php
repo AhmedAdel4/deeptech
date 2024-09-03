@@ -2,11 +2,12 @@
 
 @section('content')
     @include('includes.messages')
-    <form action="{{ route('service.update',['service' => $service]) }}" method="POST" enctype="multipart/form-data">
+    <form action="{{ route('service.update') }}" method="POST" enctype="multipart/form-data">
         @method('put')
         <div class="card">
             <div class="container">
                 @csrf
+                <input type="hidden" name="serviceId" value="{{ $service->id }}">
                 <div class="row mb-3 mt-3">
                     <div class="col-md-6 col-sm-12">
                         <div class="form-group">

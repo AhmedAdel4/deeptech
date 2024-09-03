@@ -315,5 +315,6 @@ return [
     'projects' => 'projects',
     'clients' => 'clients',
     'statistics' => 'statistics',
+    'Service Details' => 'Service Details',
 
 ];

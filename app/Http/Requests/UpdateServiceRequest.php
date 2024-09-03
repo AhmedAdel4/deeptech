@@ -24,6 +24,7 @@ class UpdateServiceRequest extends FormRequest
     public function rules()
     {
         return [
+            'serviceId' => 'required|exists:services,id',
             'title' => 'required|string',
             'description' => 'required|string',
             'opening_speech' => 'required|string',

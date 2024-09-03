@@ -72,7 +72,7 @@ Route::middleware('local')->prefix('admin')->group(function () {
         Route::get('service', [ServiceController::class, 'index'])->name('service.index');
         Route::get('service/create', [ServiceController::class, 'create'])->name('service.create');
         Route::get('service/{service}/edit', [ServiceController::class, 'edit'])->name('service.edit');
-        Route::put('service/{service}/update', [ServiceController::class, 'update'])->name('service.update');
+        Route::put('service/update', [ServiceController::class, 'update'])->name('service.update');
         Route::post('service/store', [ServiceController::class, 'store'])->name('service.store');
         Route::delete('service/{service}/destroy', [ServiceController::class, 'destroy'])->name('service.destroy');
 

@@ -39,9 +39,10 @@ class ServiceController extends Controller
         return view('dashboard.service.edit',compact('service'));
     }
 
-    public function update(UpdateServiceRequest $request, $service)
+    public function update(UpdateServiceRequest $request)
     {
         $data = $request->validated();
+        $service = Service::find($data['serviceId']);
         $service->update($data);
         $detail_image = $data['detail_image'] ?? null;
         if ($detail_image) {

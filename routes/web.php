@@ -27,6 +27,7 @@ Route::get('/admin', function () {
 });
 Route::get('/', [HomeController::class, 'index'])->name('homePage');
 Route::get('/about-details', [HomeController::class, 'aboutDetails'])->name('aboutDetails');
+Route::get('/service-details/{service}', [HomeController::class, 'serviceDetails'])->name('serviceDetails');
 Route::post('/userMessage', [HomeController::class, 'userMessage'])->name('userMessage');
 
 
