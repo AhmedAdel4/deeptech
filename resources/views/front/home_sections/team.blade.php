@@ -9,21 +9,20 @@
 
         <div class="row gy-4">
 
+            @php
+                // Calculate the column width based on the number of teams
+                $teamCount = count($teams);
+                if ($teamCount === 1) {
+                    $colClass = 'col-lg-12';
+                } elseif ($teamCount === 2) {
+                    $colClass = 'col-lg-6';
+                } elseif ($teamCount === 3) {
+                    $colClass = 'col-lg-4';
+                } else {
+                    $colClass = 'col-lg-3';
+                }
+            @endphp
             @foreach ($teams as $team)
-                @php
-                    // Calculate the column width based on the number of teams
-                    $teamCount = count($teams);
-                    if ($teamCount === 1) {
-                        $colClass = 'col-lg-12';
-                    } elseif ($teamCount === 2) {
-                        $colClass = 'col-lg-6';
-                    } elseif ($teamCount === 3) {
-                        $colClass = 'col-lg-4';
-                    } else {
-                        $colClass = 'col-lg-3';
-                    }
-                @endphp
-
                 <div class="{{ $colClass }} col-md-6" data-aos="fade-up" data-aos-delay="100">
                     <div class="member">
                         @if ($team->getFirstMediaUrl('team'))

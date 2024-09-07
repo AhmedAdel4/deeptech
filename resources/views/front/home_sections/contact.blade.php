@@ -67,7 +67,7 @@
                     <div class="error-message" style="text-align: right"></div>
                     <div class="sent-message" style="text-align: right">@lang('lang.Your message has been sent. Thank you!')</div>
 
-                    <button type="submit">@lang('lang.send')</button>
+                    <button type="submit" style="background-color: #3391b7">@lang('lang.send')</button>
                 </div>
 
             </div>

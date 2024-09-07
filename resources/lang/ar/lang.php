@@ -296,7 +296,7 @@ return [
     'MainImages' => 'الصور الاساسية',
     'max: 3' => 'اقصى عدد 3',
     'carousels' => 'البانر الرئيسى',
-    'Team' => 'فريق العمل',
+    'Team' => 'عملاء الشركة',
     'role' => 'الوظيفة',
     'phone' => 'رقم الهاتف',
     'Call Us' => 'اتصل بنا',
@@ -325,4 +325,7 @@ return [
     'clients' => 'العملاء',
     'statistics' => 'الأحصائيات',
     'Service Details' => 'تفاصيل الخدمة',
+    'Our Partners of Success' => 'شركاء النجاح',
+    'logo' => 'شعار الصفحة',
+    'companyLogo' => 'شعار الصفحة',
 ];

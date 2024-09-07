@@ -8,11 +8,18 @@
     <meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=0,minimal-ui">
 
     <meta name="description"
-        content="{{ env('APP_NAME') }} admin is super flexible, powerful, clean &amp; modern   admin   with unlimited possibilities.">
-    <meta name="keywords" content="admin  , {{ env('APP_NAME') }} admin  , dashboard  , flat admin  ,   admin  , web app">
+        content="DEEP TECH admin is super flexible, powerful, clean &amp; modern   admin   with unlimited possibilities.">
+    <meta name="keywords" content="admin  , DEEP TECH admin  , dashboard  , flat admin  ,   admin  , web app">
     <meta name="author" content="PIXINVENT">
-    <title>Home - {{ env('APP_NAME') }} - Admin </title>
-    <link rel="icon" type="image/x-icon" href="{{ asset('app-assets/images/logo/Deep Programming logo.png') }}">
+    <title>Home - DEEP TECH - Admin </title>
+    @php
+        $logo = App\Models\Setting::where('name', 'logo')->first();
+    @endphp
+    @if ($logo && $logo->getLogoImage() != null)
+        <link rel="icon" type="image/x-icon" href="{{ $logo->getLogoImage()->original_url }}">
+    @else
+        <link rel="icon" type="image/x-icon" href="{{ asset('app-assets/images/logo/Deep Programming logo.jpg') }}">
+    @endif
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;1,400;1,500;1,600"
         rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
@@ -26,7 +33,7 @@
         <link rel="stylesheet" type="text/css" href="/app-assets/vendors/css/vendors-rtl.min.css">
         {{-- <link rel="stylesheet" type="text/css" href="/app-assets/vendors/css-rtl/charts/apexcharts.css"> --}}
         {{-- <link rel="stylesheet" type="text/css" href="/app-assets/vendors/css-rtl/extensions/toastr.min.css"> --}}
-	<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;500;600;700&display=swap">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;500;600;700&display=swap">
         <link rel="stylesheet" type="text/css"
             href="/app-assets/vendors/css-rtl/tables/datatable/dataTables.bootstrap4.min.css">
         <link rel="stylesheet" type="text/css"
@@ -34,7 +41,7 @@
         <!-- END: Vendor CSS-->
 
         <!-- BEGIN: Theme CSS-->
-	<link rel="stylesheet" type="text/css" href="/app-assets/vendors/css/forms/select/select2.min.css">
+        <link rel="stylesheet" type="text/css" href="/app-assets/vendors/css/forms/select/select2.min.css">
         <link rel="stylesheet" type="text/css" href="/app-assets/css-rtl/bootstrap.css">
         <link rel="stylesheet" type="text/css" href="/app-assets/css-rtl/bootstrap-extended.css">
         <link rel="stylesheet" type="text/css" href="/app-assets/css-rtl/colors.css">
@@ -49,7 +56,7 @@
         <link rel="stylesheet" type="text/css" href="/app-assets/css-rtl/plugins/charts/chart-apex.css">
         {{-- <link rel="stylesheet" type="text/css" href="/app-assets/css-rtl/plugins/extensions/ext-component-toastr.css"> --}}
         <link rel="stylesheet" type="text/css" href="/app-assets/css-rtl/pages/app-invoice-list.css">
-	<link rel="stylesheet" type="text/css" href="/app-assets/css-rtl/custom-rtl.min.css">
+        <link rel="stylesheet" type="text/css" href="/app-assets/css-rtl/custom-rtl.min.css">
         <!-- END: Page CSS-->
     @else
         <link rel="stylesheet" type="text/css" href="/app-assets/vendors/css/vendors.min.css">
@@ -83,4 +90,3 @@
 
 </head>
 <!-- END: Head-->
-

@@ -38,23 +38,25 @@
     <div class="navbar-header">
         <ul class="nav navbar-nav flex-row">
             <li class="nav-item mr-auto">
-                <a class="navbar-brand" href="{{ route('home') }}">
-                    <img src="{{ asset('app-assets/images/logo/Deep Programming logo.png') }}" class="responsive-logo"
-                        alt="{{ env('APP_NAME') }}">
+                <a class="navbar-brand" href="{{ route('home') }}" style="margin-top: 90px">
+                    @php
+                        $logo = App\Models\Setting::where('name', 'logo')->first();
+                    @endphp
+                    @if ($logo && $logo->getLogoImage() != null)
+                        <img src="{{ $logo->getLogoImage()->original_url }}" class="responsive-logo" alt="Deep Tech">
+                    @else
+                        <img src="{{ asset('app-assets/images/logo/Deep Programming logo.jpg') }}"
+                            class="responsive-logo" alt="Deep Tech">
+                    @endif
                 </a>
             </li>
-            <li class="nav-item nav-toggle">
-                <a class="nav-link modern-nav-toggle pr-0" data-toggle="collapse">
-                    <i class="d-block d-xl-none text-primary toggle-icon font-medium-4" data-feather="x"></i>
-                    <i class="d-none d-xl-block collapse-toggle-icon font-medium-4 text-primary" data-feather="disc"
-                        data-ticon="disc"></i>
-                </a>
-            </li>
+
         </ul>
     </div>
     <div class="shadow-bottom"></div>
     <div class="main-menu-content">
-        <ul class="navigation navigation-main" id="main-menu-navigation" data-menu="menu-navigation">
+        <ul class="navigation navigation-main" id="main-menu-navigation" data-menu="menu-navigation"
+            style="margin-top: 60px">
             <li class=" navigation-header"><span data-i18n="Apps &amp; Pages">@lang('lang.Statistics')</span><i
                     data-feather="more-horizontal"></i>
             </li>
@@ -121,6 +123,22 @@
                         <path d="M8 3.13a4 4 0 0 0 0 7.75"></path>
                     </svg>
                     <span class="menu-item text-truncate" data-i18n="Team">@lang('lang.Team')</span>
+                </a>
+            </li>
+            <li
+                class="nav-link {{ Route::currentRouteName() == 'partner.index' || Route::currentRouteName() == 'partner.show' ? 'active' : '' }}">
+                <a class="d-flex align-items-center" href="{{ route('partner.index') }}">
+                    <!-- SVG for partner -->
+                    <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M17 21v-2a4 4 0 0 0-3-3.87"></path>
+                        <path d="M9 21v-2a4 4 0 0 1 3-3.87"></path>
+                        <circle cx="12" cy="7" r="4"></circle>
+                        <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+                        <path d="M8 3.13a4 4 0 0 0 0 7.75"></path>
+                    </svg>
+                    <span class="menu-item text-truncate" data-i18n="partner">@lang('lang.Our Partners of Success')</span>
                 </a>
             </li>
             <li
@@ -206,17 +224,16 @@
                     <span class="menu-title text-truncate" data-i18n="User">@lang('lang.Settings')</span>
                 </a>
                 <ul class="menu-content">
-                    {{-- <li
-                        class="nav-link {{ Route::currentRouteName() == 'aboutus.index' || Route::currentRouteName() == 'aboutus.show' ? 'active' : '' }}">
-                        <a class="d-flex align-items-center" href="{{ route('aboutus.index') }}">
+                    <li class="nav-link {{ Route::currentRouteName() == 'companyLogo' ? 'active' : '' }}">
+                        <a class="d-flex align-items-center" href="{{ route('companyLogo') }}">
                             <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14"
                                 viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
                                 stroke-linecap="round" stroke-linejoin="round" class="feather feather-circle">
                                 <circle cx="12" cy="12" r="10"></circle>
                             </svg>
-                            <span class="menu-item text-truncate" data-i18n="User">@lang('lang.AboutUs')</span>
+                            <span class="menu-item text-truncate" data-i18n="User">@lang('lang.companyLogo')</span>
                         </a>
-                    </li> --}}
+                    </li>
 
 
 

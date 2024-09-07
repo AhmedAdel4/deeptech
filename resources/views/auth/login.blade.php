@@ -8,11 +8,11 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=0,minimal-ui">
         <meta name="description"
-            content="Direct Tech admin is super flexible, powerful, clean &amp; modern responsive bootstrap 4 admin template with unlimited possibilities.">
+            content="Deep Tech admin is super flexible, powerful, clean &amp; modern responsive bootstrap 4 admin template with unlimited possibilities.">
         <meta name="keywords"
-            content="admin template, Direct Tech admin template, dashboard template, flat admin template, responsive admin template, web app">
+            content="admin template, Deep Tech admin template, dashboard template, flat admin template, responsive admin template, web app">
         <meta name="author" content="PIXINVENT">
-        <title>Login - Direct Tech </title>
+        <title>Login - Deep Tech </title>
         <link
             href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;1,400;1,500;1,600"
             rel="stylesheet">
@@ -50,11 +50,19 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=0,minimal-ui">
         <meta name="description"
-            content="Direct Tech admin is super flexible, powerful, clean &amp; modern responsive bootstrap 4 admin  with unlimited possibilities.">
-        <meta name="keywords" content="admin , Direct Tech admin , dashboard , flat admin , responsive admin , web app">
+            content="Deep Tech admin is super flexible, powerful, clean &amp; modern responsive bootstrap 4 admin  with unlimited possibilities.">
+        <meta name="keywords" content="admin , Deep Tech admin , dashboard , flat admin , responsive admin , web app">
         <meta name="author" content="PIXINVENT">
-        <title>Login - Direct Tech </title>
-        <link rel="icon" type="image/x-icon" href="{{ asset('app-assets/images/logo/Deep Programming logo.png') }}">
+        <title>Login - Deep Tech </title>
+        @php
+            $logo = App\Models\Setting::where('name', 'logo')->first();
+        @endphp
+        @if ($logo && $logo->getLogoImage() != null)
+            <link rel="icon" type="image/x-icon" href="{{ $logo->getLogoImage()->original_url }}">
+        @else
+            <link rel="icon" type="image/x-icon"
+                href="{{ asset('app-assets/images/logo/Deep Programming logo.jpg') }}">
+        @endif
         <link
             href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;1,400;1,500;1,600"
             rel="stylesheet">
@@ -124,12 +132,21 @@
                         <div class="card mb-0">
                             <div class="card-body">
                                 <a href="javascript:void(0);" class="brand-logo">
-                                    <img src="{{ app()->getLocale() == 'ar' ? '/app-assets/images/logo/Deep Programming logo.png' : '/app-assets/images/logo/Deep Programming logo.png' }}"
-                                        width="250" alt="">
+                                    @php
+                                        $logo = App\Models\Setting::where('name', 'logo')->first();
+                                    @endphp
+                                    @if ($logo && $logo->getLogoImage() != null)
+                                        <img src="{{ app()->getLocale() == 'ar' ? $logo->getLogoImage()->original_url : $logo->getLogoImage()->original_url }}"
+                                            width="250" alt="">
+                                    @else
+                                        <img src="{{ app()->getLocale() == 'ar' ? '/app-assets/images/logo/Deep Programming logo.jpg' : '/app-assets/images/logo/Deep Programming logo.jpg' }}"
+                                            width="250" alt="">
+                                    @endif
 
                                 </a>
 
-                                <h4 class="card-title mb-1">{{ trans('lang.Welcome_to_Direct_Tech!') . " " . env('APP_NAME')  }} 👋</h4>
+                                <h4 class="card-title mb-1">
+                                    {{ trans('lang.Welcome_to_Direct_Tech!') . ' ' . env('APP_NAME') }} 👋</h4>
                                 <p class="card-text mb-2">{{ trans('lang.Please sign-in to your account') }}</p>
 
                                 <form class="auth-login-form mt-2" action="{{ route('login') }}" method="POST">

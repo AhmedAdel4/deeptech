@@ -6,7 +6,9 @@ use App\Http\Controllers\Admin\ContactUsController;
 use Illuminate\Support\Facades\App;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Admin\DashboardController;
+use App\Http\Controllers\Admin\PartnerController;
 use App\Http\Controllers\Admin\ServiceController;
+use App\Http\Controllers\Admin\SettingController;
 use App\Http\Controllers\Admin\SocialLinkController;
 use App\Http\Controllers\Admin\StatisticsController;
 use App\Http\Controllers\Admin\TeamController;
@@ -46,6 +48,10 @@ Route::middleware('local')->prefix('admin')->group(function () {
         Route::get('aboutus', [AboutUsController::class, 'index'])->name('aboutus.index');
         Route::post('aboutus/store', [AboutUsController::class, 'store'])->name('aboutus.store');
 
+        //aboutus routes
+        Route::get('logo', [SettingController::class, 'logoIndex'])->name('companyLogo');
+        Route::post('logo/store', [SettingController::class, 'logoStore'])->name('logo.store');
+
         Route::get('userMessage', [UserMessagesController::class, 'index'])->name('userMessage.index');
         Route::get('userMessage/Contacted/{id}', [UserMessagesController::class, 'contacted'])->name('userMessage.Contacted');
 
@@ -68,6 +74,13 @@ Route::middleware('local')->prefix('admin')->group(function () {
         Route::post('team/store', [TeamController::class, 'store'])->name('team.store');
         Route::delete('team/{team}/destroy', [TeamController::class, 'destroy'])->name('team.destroy');
 
+
+        Route::get('partner', [PartnerController::class, 'index'])->name('partner.index');
+        Route::get('partner/create', [PartnerController::class, 'create'])->name('partner.create');
+        Route::get('partner/{partner}/edit', [PartnerController::class, 'edit'])->name('partner.edit');
+        Route::put('partner/{partner}/update', [PartnerController::class, 'update'])->name('partner.update');
+        Route::post('partner/store', [PartnerController::class, 'store'])->name('partner.store');
+        Route::delete('partner/{partner}/destroy', [PartnerController::class, 'destroy'])->name('partner.destroy');
 
         Route::get('service', [ServiceController::class, 'index'])->name('service.index');
         Route::get('service/create', [ServiceController::class, 'create'])->name('service.create');

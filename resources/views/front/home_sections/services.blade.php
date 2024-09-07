@@ -10,14 +10,15 @@
 
         @php
             $icons = [
-                'bi bi-briefcase',
-                'bi bi-card-checklist',
-                'bi bi-bar-chart',
-                'bi bi-binoculars',
-                'bi bi-brightness-high',
-                'bi bi-calendar4-week',
+                'bi bi-cpu',
+                'bi bi-code-slash', 
+                'bi bi-hdd',
+                'bi bi-cloud',
+                'bi bi-robot',
+                'bi bi-wifi',
             ];
         @endphp
+
         <div class="row gy-4">
             @foreach ($services as $index => $service)
                 @php

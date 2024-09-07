@@ -25,6 +25,12 @@
     @include('front.home_sections.team')
     <!-- /Team Section -->
 
+    <!-- Team Section -->
+    @if (count($partners) > 0)
+        @include('front.home_sections.partener_of_success')
+    @endif
+    <!-- /Team Section -->
+
 
     <!-- Contact Section -->
     @include('front.home_sections.contact')

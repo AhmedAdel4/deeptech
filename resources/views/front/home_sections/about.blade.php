@@ -27,7 +27,7 @@
                             mastiro dolore eu fugiat nulla pariatur.</span></li>
                 </ul> --}}
                 @if ($about)
-                    <a href="{{ route('aboutDetails') }}" class="read-more"><span>@lang('lang.Read More')</span><i
+                    <a href="{{ route('aboutDetails') }}" style="background-color: #3391b7" class="read-more"><span>@lang('lang.Read More')</span><i
                             class="bi bi-arrow-right"></i></a>
                 @endif
             </div>

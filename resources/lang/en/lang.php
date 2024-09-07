@@ -316,5 +316,7 @@ return [
     'clients' => 'clients',
     'statistics' => 'statistics',
     'Service Details' => 'Service Details',
+    'Our Partners of Success' => 'Our Partners of Success',
+    'logo' => 'Our Partners of Success',
 
 ];

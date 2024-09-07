@@ -1,10 +1,10 @@
-<footer id="footer" class="footer dark-background">
+<footer id="footer" class="footer dark-background" style="background-color: #062548">
 
     <div class="container footer-top">
         <div class="row gy-4">
             <div class="col-lg-4 col-md-6 footer-about">
-                <a href="index.html" class="logo d-flex align-items-center">
-                    <span class="sitename">Deep Tech</span>
+                <a href="{{ route('homePage') }}" class="logo d-flex align-items-center">
+                    <span class="sitename" style="font-family: sans-serif">DEEP TECH</span>
                 </a>
                 <div class="footer-contact pt-3">
                     <p>{{ $contact->address ?? '' }}</p>
@@ -48,7 +48,7 @@
     </div>
 
     <div class="container copyright text-center mt-4">
-        <p>© <span>@lang('lang.Copyright')</span> <strong class="px-1 sitename">{{ env('APP_NAME') }}</strong>
+        <p>© <span>@lang('lang.Copyright')</span> <strong class="px-1 sitename" style="font-family: sans-serif">DEEP TECH</strong>
             <span>@lang('lang.All Rights Reserved')</span></p>
         {{-- <div class="credits">
             Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>

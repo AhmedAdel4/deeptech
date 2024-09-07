@@ -4,12 +4,16 @@
 <head>
     <meta charset="utf-8">
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
-    <title>Index - Deep Tech</title>
+    <title>DEEP TECH</title>
     <meta name="description" content="">
     <meta name="keywords" content="">
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <!-- Favicons -->
-    <link href="{{ asset('app-assets/images/logo/Deep Programming logo.png') }}" rel="icon">
+    @if ($logo && $logo->getLogoImage() != null)
+        <link href="{{ $logo->getLogoImage()->original_url }}" rel="icon">
+    @else
+        <link href="{{ asset('app-assets/images/logo/Deep Programming logo.jpg') }}" rel="icon">
+    @endif
     <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
 
     <!-- Fonts -->

@@ -18,11 +18,11 @@
 }
 
 /* Global Colors - The following color variables are used throughout the website. Updating them here will change the color scheme of the entire website */
-:root { 
+:root {
   --background-color: #ffffff; /* Background color for the entire website, including individual sections */
   --default-color: #666666; /* Default color used for the majority of the text content across the entire website */
   --heading-color: #333333; /* Color for headings, subheadings and title throughout the website */
-  --accent-color: #18d26e; /* Accent color that represents your brand on the website. It's used for buttons, links, and other elements that need to stand out */
+  --accent-color: #274464; /* Accent color that represents your brand on the website. It's used for buttons, links, and other elements that need to stand out */
   --surface-color: #ffffff; /* The surface color is used as a background of boxed elements within sections, such as cards, icon boxes, or other elements that require a visual separation from the global background. */
   --contrast-color: #ffffff; /* Contrast color for text, ensuring readability against backgrounds of accent, heading, or default colors. */
 }
@@ -959,7 +959,7 @@ section,
 }
 
 .featured-services .service-item .icon i {
-  color: var(--accent-color);
+  color: #274464;
   font-size: 40px;
   line-height: 0;
   transition: 0.3s;
@@ -1695,7 +1695,7 @@ section,
 --------------------------------------------------------------*/
 .contact .info-item i {
   font-size: 20px;
-  color: var(--accent-color);
+  color: #274464;
   font-size: 36px;
   display: flex;
   justify-content: center;
